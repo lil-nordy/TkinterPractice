@@ -2,8 +2,8 @@
 This project lets you try out Tkinter/Ttk and practice it!
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Nathaniel Neil Nate Nordquist.
+"""  # done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import tkinter
 from tkinter import ttk
@@ -12,26 +12,32 @@ from tkinter import ttk
 def main():
     """ Constructs a GUI with stuff on it. """
     # ------------------------------------------------------------------
-    # TODO: 2. After reading and understanding the m1e module,
+    # DONE: 2. After reading and understanding the m1e module,
     #   ** make a window that shows up. **
     # ------------------------------------------------------------------
+    root = tkinter.Tk()
 
     # ------------------------------------------------------------------
-    # TODO: 3. After reading and understanding the m2e module,
+    # DONE: 3. After reading and understanding the m2e module,
     #   ** put a Frame on the window. **
     # ------------------------------------------------------------------
+    frame1 = ttk.Frame(root, padding=40)
+    frame1.grid()
+
 
     # ------------------------------------------------------------------
-    # TODO: 4. After reading and understanding the m2e module,
+    # DONE: 4. After reading and understanding the m2e module,
     #   ** put a Button on the Frame. **
     # ------------------------------------------------------------------
+    say_hello_button = ttk.Button(frame1, text='Hello!')
+    say_hello_button.grid()
 
     # ------------------------------------------------------------------
-    # TODO: 5. After reading and understanding the m3e module,
+    # done: 5. After reading and understanding the m3e module,
     #   ** make your Button respond to a button-press **
     #   ** by printing   "Hello"  on the Console.     **
     # ------------------------------------------------------------------
-
+    say_hello_button['command'] = lambda: print_hello_func()
     # ------------------------------------------------------------------
     # TODO: 6. After reading and understanding the m4e module,
     #   -- Put an Entry box on the Frame.
@@ -40,6 +46,11 @@ def main():
     #        on the Console if the current string in the Entry box
     #        is the string 'ok', but print "Goodbye" otherwise.
     # ------------------------------------------------------------------
+    my_entry_box = ttk.Entry(frame1)
+    my_entry_box.grid()
+    hello_goodbye_button = ttk.Button(frame1, text='Check for ok')
+    hello_goodbye_button['command'] = lambda: check_for_ok(my_entry_box)
+    hello_goodbye_button.grid()
 
     # ------------------------------------------------------------------
     # TODO: 7.
@@ -69,7 +80,18 @@ def main():
     # TODO: 8. As time permits, do other interesting GUI things!
     # ------------------------------------------------------------------
 
+    root.mainloop()
 
+def print_hello_func():
+    """This is my simple function"""
+    print('Hello!')
+
+def check_for_ok(entry_box):
+    contents = entry_box.get()
+    if contents == 'ok':
+        print('hello')
+    else:
+        print('goodbye')
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
 # ----------------------------------------------------------------------

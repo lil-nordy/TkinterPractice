@@ -16,7 +16,7 @@ from tkinter import ttk  # Necessary in all but this trivial example.
 
 def main():
     root = tkinter.Tk()
-    root.mainloop()
+    root.mainloop() # kind of like a while loop. Waiting for events are common.
 
     print('Done with the Event Loop')  # Note when this line runs.
 
