@@ -19,6 +19,7 @@ def main():
     root.mainloop() # kind of like a while loop. Waiting for events are common.
 
     print('Done with the Event Loop')  # Note when this line runs.
+    # prints when the frame is closed.
 
 
 # ----------------------------------------------------------------------
